@@ -210,10 +210,10 @@ export const StickyScrollFeatures = () => {
                                 </div>
                                 <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-4">Educational Games</h3>
                                 <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 mb-6 max-w-md leading-relaxed">
-                                    Kahoot-style learning games for a completely different learning experience. Watch student engagement soar when learning feels like playing.
+                                    Interactive learning games for a completely different learning experience. Watch student engagement soar when learning feels like playing.
                                 </p>
                                 <div className="flex flex-wrap gap-2 mt-auto">
-                                    {["Kahoot-style", "Math Sprint", "Typing Master", "Live Leaderboards"].map((tag, i) => (
+                                    {["Interactive", "Gaming monitoring", "Live Leaderboards"].map((tag, i) => (
                                         <span key={i} className="px-3 py-1.5 rounded-full text-xs font-semibold bg-fuchsia-50 dark:bg-fuchsia-900/20 text-fuchsia-700 dark:text-fuchsia-300 border border-fuchsia-100 dark:border-fuchsia-900/30">
                                             {tag}
                                         </span>

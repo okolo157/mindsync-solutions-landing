@@ -246,9 +246,11 @@ const MODULE_DETAILS: Record<string, { title: string; features: string[]; benefi
   "educational-games": {
     title: "Educational Games",
     features: [
-      "Kahoot-style interactive learning games",
+      "Interactive learning games",
       "Math Sprint: Competitive arithmetic races",
       "Typing Master: Keyboard proficiency training",
+      "Spelling Bee: Competitive spelling training games",
+      "Geography Game: Learn about countries and capitals",
       "Real-time leaderboards and achievements"
     ],
     benefit: "Offers a completely different learning experience that makes kids actually want to practice their core skills."
