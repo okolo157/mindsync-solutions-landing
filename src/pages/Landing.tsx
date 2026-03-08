@@ -1,10 +1,8 @@
 import { motion } from "framer-motion";
 import {
   Rocket,
-  ChevronRight,
   Check,
   Users,
-  BookOpen,
   TrendingUp,
   UserCheck,
 } from "lucide-react";
@@ -17,7 +15,6 @@ import {
 } from "@/components/ui/accordion";
 import { useNavigate } from "react-router-dom";
 import { CTAButton } from "@/components/ui/ctaButton";
-import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Landing/Navbar";
 import Footer from "@/components/Landing/Footer";
 import { preloadCalendly } from "@/utils/calendly";
@@ -25,6 +22,7 @@ import { Differentiation } from "@/components/Landing/Differentiation";
 import { TrustSection } from "@/components/Landing/TrustSection";
 import { PowerFeatures } from "@/components/Landing/PowerFeatures";
 import { MobileAppShowcase } from "@/components/Landing/MobileAppShowcase";
+import { StickyScrollFeatures } from "@/components/Landing/StickyScrollFeatures";
 import { SEO } from "@/components/SEO";
 import { StructuredData } from "@/components/StructuredData";
 
@@ -57,7 +55,7 @@ const Landing: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#FCFDFF] dark:bg-[#030712] px-3 text-slate-900 dark:text-white overflow-x-hidden selection:bg-indigo-500/30 font-sans transition-colors duration-300">
+    <div className="min-h-screen bg-[#FCFDFF] dark:bg-[#030712] px-3 text-slate-900 dark:text-white overflow-x-clip selection:bg-indigo-500/30 font-sans transition-colors duration-300">
       <SEO
         title="Mindsync - Student Information Management System"
         description="Experience the power of a fully integrated educational ecosystem. Mindsync automates the mundane, so you can focus on what matters: Education."
@@ -214,104 +212,8 @@ const Landing: React.FC = () => {
       {/* Power Features - FINANCE & TRANSPORT */}
       <PowerFeatures />
 
-      {/* General Features Grid - COMPLETE SCHOOL OS - Redesigned */}
-      <div id="features" className="py-24 relative z-10 overflow-hidden bg-slate-50/50 dark:bg-white/[0.02]">
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-20">
-            <h2 className="text-3xl sm:text-5xl font-bold mb-6 text-slate-900 dark:text-white">
-              Complete School OS
-            </h2>
-            <p className="text-lg text-slate-600 dark:text-slate-400 max-w-3xl mx-auto mb-8">
-              Beyond the core modules, everything else runs in harmony.
-            </p>
-            <Button
-              onClick={() => navigate("/products")}
-              variant="outline"
-              className="rounded-full px-8 h-12 border-slate-300 dark:border-white/10 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5 hover:text-indigo-600 dark:hover:text-white transition-all group"
-            >
-              View All Modules <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-            </Button>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-12">
-            {/* Card 1 - Student Management */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="group relative overflow-hidden rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/5 p-8 transition-all hover:shadow-xl"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent dark:from-blue-900/10 opacity-50 transition-opacity group-hover:opacity-100" />
-              <div className="relative z-10 flex flex-col h-full">
-                <div className="w-12 h-12 rounded-2xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-6 text-blue-600 dark:text-blue-400">
-                  <Users className="w-6 h-6" />
-                </div>
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">Student Management</h3>
-                <p className="text-slate-600 dark:text-slate-400 mb-6 flex-1">
-                  A 360-degree view of every student. Track admission history, medical records, and disciplinary actions in one secure digital vault.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {["Digital Profiles", "Admissions", "Medical Records", "Guardian Portal"].map((tag, i) => (
-                    <span key={i} className="px-3 py-1 rounded-full text-xs font-medium bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 border border-blue-100 dark:border-blue-900/30">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Card 2 - Academic Excellence */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="group relative overflow-hidden rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/5 p-8 transition-all hover:shadow-xl"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 to-transparent dark:from-emerald-900/10 opacity-50 transition-opacity group-hover:opacity-100" />
-              <div className="relative z-10">
-                <div className="w-12 h-12 rounded-2xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center mb-6 text-emerald-600 dark:text-emerald-400">
-                  <BookOpen className="w-6 h-6" />
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Academic Excellence</h3>
-                <p className="text-slate-600 dark:text-slate-400 text-sm mb-6">
-                  Flexible grading systems, automated report cards, and deep performance analytics.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Gradebook</span>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">•</span>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">CBT</span>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Card 3 - Staff & HR */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="group relative overflow-hidden rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/5 p-8 transition-all hover:shadow-xl"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-amber-50 to-transparent dark:from-amber-900/10 opacity-50 transition-opacity group-hover:opacity-100" />
-              <div className="relative z-10">
-                <div className="w-12 h-12 rounded-2xl bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center mb-6 text-amber-600 dark:text-amber-400">
-                  <Users className="w-6 h-6" />
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Staff & HR</h3>
-                <p className="text-slate-600 dark:text-slate-400 text-sm mb-6">
-                  Manage teacher workloads, attendance, and leave requests with enterprise-grade HR tools.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">Payroll</span>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">•</span>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">Leave</span>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </div>
+      {/* Dynamic Scrolling Features Grid - COMPLETE SCHOOL OS - Redesigned */}
+      <StickyScrollFeatures />
 
       {/* Mobile App Section - Dedicated Showcase */}
       <MobileAppShowcase />

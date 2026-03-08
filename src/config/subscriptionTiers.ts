@@ -167,12 +167,18 @@ export const MODULE_INFO: Record<string, ModuleInfo> = {
   },
   "LMS": {
     id: "LMS",
-    name: "LMS",
-    description: "Integrated digital learning and LMS partnership",
+    name: "Integrated LMS",
+    description: "World-class digital learning powered by TutorCafes",
     category: "academic",
     icon: "GraduationCap",
   },
-
+  "educational-games": {
+    id: "educational-games",
+    name: "Educational Games",
+    description: "Kahoot-style interactive learning games",
+    category: "academic",
+    icon: "Gamepad2",
+  },
 };
 
 export const SUBSCRIPTION_TIERS: Record<SubscriptionTier, TierConfig> = {
@@ -190,6 +196,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTier, TierConfig> = {
       "assessment",
       "timetable",
       "LMS",
+      "educational-games",
     ],
     features: [
       "Academic Session Management",
@@ -218,7 +225,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTier, TierConfig> = {
       "timetable",
       "sms",
       "LMS",
-
+      "educational-games",
     ],
     features: [
       "All Basic features",
@@ -252,7 +259,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTier, TierConfig> = {
       "finance",
       "sms",
       "LMS",
-
+      "educational-games",
     ],
     features: [
       "All Pro features",

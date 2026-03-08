@@ -136,8 +136,8 @@ export const PowerFeatures = () => {
                             <div className="absolute -bottom-6 -left-6 z-20 bg-white dark:bg-slate-800 p-4 rounded-xl shadow-xl border border-slate-100 dark:border-white/10 flex items-center gap-4">
                                 <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
                                 <div>
-                                    <div className="text-xs font-bold text-slate-500 uppercase">Route 12 - Global Network</div>
-                                    <div className="text-sm font-bold text-slate-900 dark:text-white">International Safety Priority</div>
+                                    <div className="text-xs font-bold text-slate-500 uppercase">Sabo Yaba</div>
+                                    <div className="text-sm font-bold text-slate-900 dark:text-white">Route 14 Active</div>
                                 </div>
                             </div>
                         </motion.div>

@@ -22,7 +22,7 @@ import {
   MessageSquare,
   ArrowRight,
   Shield,
-
+  Gamepad2,
   Check
 } from "lucide-react";
 import { CTAButton } from "@/components/ui/ctaButton";
@@ -58,6 +58,7 @@ const ICON_MAP: Record<string, any> = {
   Library,
   PiggyBank,
   MessageSquare,
+  Gamepad2,
 };
 
 // Detailed definitions for the modal
@@ -231,6 +232,26 @@ const MODULE_DETAILS: Record<string, { title: string; features: string[]; benefi
       "Targeted messaging (e.g., specific class parents)"
     ],
     benefit: "Bridges the gap between school and home with instant, reliable communication."
+  },
+  "LMS": {
+    title: "Integrated LMS by TutorCafes",
+    features: [
+      "Powered by international provider TutorCafes",
+      "Totally seamless single sign-on (SSO)",
+      "World-class digital coursework and assignments",
+      "Interactive multimedia learning materials"
+    ],
+    benefit: "Gives your school a world-class remote learning environment without making students juggle multiple logins."
+  },
+  "educational-games": {
+    title: "Educational Games",
+    features: [
+      "Kahoot-style interactive learning games",
+      "Math Sprint: Competitive arithmetic races",
+      "Typing Master: Keyboard proficiency training",
+      "Real-time leaderboards and achievements"
+    ],
+    benefit: "Offers a completely different learning experience that makes kids actually want to practice their core skills."
   },
 };
 

@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ScrollToTop from "@/components/ScrollToTop";
 import Landing from "@/pages/Landing";
 import Products from "@/pages/Products";
 import Plans from "@/pages/Plans";
@@ -13,6 +14,7 @@ function App() {
   return (
     <ThemeProvider defaultTheme="light" storageKey="mindsync-landing-theme">
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/products" element={<Products />} />
