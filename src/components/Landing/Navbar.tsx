@@ -55,28 +55,28 @@ export default function Navbar() {
         <div className="hidden md:flex flex-1 items-center justify-center gap-8">
           <button
             onClick={() => navigate("/")}
-            className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white"
+            className="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white"
           >
             Home
           </button>
 
           <button
             onClick={() => navigate("/products")}
-            className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white"
+            className="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white"
           >
             Products
           </button>
 
           <button
             onClick={() => navigate("/plans")}
-            className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white"
+            className="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white"
           >
             Plans
           </button>
 
           <button
             onClick={() => navigate("/contact")}
-            className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white"
+            className="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white"
           >
             Contact
           </button>
@@ -130,28 +130,28 @@ export default function Navbar() {
               <div className="flex flex-col gap-6 mt-10">
                 <button
                   onClick={() => navigate("/")}
-                  className="text-lg font-medium text-slate-700 dark:text-slate-300"
+                  className="text-lg font-semibold text-slate-700 dark:text-slate-300"
                 >
                   Home
                 </button>
 
                 <button
                   onClick={() => navigate("/products")}
-                  className="text-lg font-medium text-slate-700 dark:text-slate-300"
+                  className="text-lg font-semibold text-slate-700 dark:text-slate-300"
                 >
                   Products
                 </button>
 
                 <button
                   onClick={() => navigate("/plans")}
-                  className="text-lg font-medium text-slate-700 dark:text-slate-300"
+                  className="text-lg font-semibold text-slate-700 dark:text-slate-300"
                 >
                   Plans
                 </button>
 
                 <button
                   onClick={() => navigate("/contact")}
-                  className="text-lg font-medium text-slate-700 dark:text-slate-300"
+                  className="text-lg font-semibold text-slate-700 dark:text-slate-300"
                 >
                   Contact
                 </button>
