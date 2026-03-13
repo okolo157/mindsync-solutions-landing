@@ -49,7 +49,7 @@ export default function Navbar() {
           }
           alt="Logo"
           onClick={() => navigate("/")}
-          className="w-32 sm:w-48 h-auto cursor-pointer hover:opacity-80 transition-opacity"
+          className="w-20 sm:w-28 h-auto cursor-pointer hover:opacity-80 transition-opacity"
         />
 
         {/* Desktop Nav */}
