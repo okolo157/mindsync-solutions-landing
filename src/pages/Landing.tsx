@@ -71,8 +71,8 @@ const Landing: React.FC = () => {
         <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-purple-500/5 dark:bg-purple-500/10 blur-[120px] will-change-transform" />
       </div>
 
-      {/* Hero Section */}
-      <div className="relative pt-32 pb-12 sm:pt-40 sm:pb-24 lg:pt-48 lg:pb-32 overflow-hidden z-10">
+  
+      <div className="relative pt-24 pb-10 sm:pt-28 sm:pb-16 lg:pt-32 lg:pb-20 overflow-hidden z-10">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
             <div className="flex-[0.8] lg:flex-1 text-center lg:text-left">
