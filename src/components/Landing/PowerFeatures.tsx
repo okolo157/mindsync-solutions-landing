@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Wallet, Bus, ShieldAlert, CreditCard } from "lucide-react";
+import CountUp from 'react-countup';
 
 const busImage = "/assets/bus.png";
 
@@ -64,7 +65,14 @@ export const PowerFeatures = () => {
                                 <div className="flex justify-between items-center mb-8">
                                     <div>
                                         <div className="text-sm text-slate-500">Global Revenue (YTD)</div>
-                                        <div className="text-3xl font-bold text-slate-900 dark:text-white">$ 124,250,000</div>
+                                        <div className="text-3xl font-bold text-slate-900 dark:text-white"><CountUp
+                                          end={124250000}
+                                          duration={2.5}
+                                          separator=","
+                                          enableScrollSpy
+                                          scrollSpyOnce
+                                        />
+                                        </div>
                                     </div>
                                     <div className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">+18%</div>
                                 </div>
