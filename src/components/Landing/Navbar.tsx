@@ -15,23 +15,22 @@ export default function Navbar() {
   // Determine effective theme for logo
   useEffect(() => {
     const checkTheme = () => {
-      if (theme === 'system') {
-        setIsDark(window.matchMedia('(prefers-color-scheme: dark)').matches);
+      if (theme === "system") {
+        setIsDark(window.matchMedia("(prefers-color-scheme: dark)").matches);
       } else {
-        setIsDark(theme === 'dark' || theme === 'dark-blue');
+        setIsDark(theme === "dark" || theme === "dark-blue");
       }
     };
 
     checkTheme();
 
-    // Listen for system theme changes
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
     const handleChange = () => {
-      if (theme === 'system') checkTheme();
+      if (theme === "system") checkTheme();
     };
 
-    mediaQuery.addEventListener('change', handleChange);
-    return () => mediaQuery.removeEventListener('change', handleChange);
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
   }, [theme]);
 
   const toggleTheme = () => {
@@ -40,20 +39,20 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 z-50 w-full py-4 bg-white/70 dark:bg-black/20 backdrop-blur-md border-b border-white/10 dark:border-white/5 transition-all duration-300">
-      <div className="flex items-center justify-between max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-        <img
-          src={
-            isDark
-              ? "/assets/mind-dark.png"
-              : "/assets/mind-light.png"
-          }
-          alt="Logo"
-          onClick={() => navigate("/")}
-          className="w-20 sm:w-28 h-auto cursor-pointer hover:opacity-80 transition-opacity"
-        />
+      <div className="flex items-center max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        {/* LEFT — Logo */}
+        <div className="flex flex-1">
+          <img
+            src={isDark ? "/assets/mind-dark.png" : "/assets/mind-light.png"}
+            alt="Logo"
+            onClick={() => navigate("/")}
+            className="w-20 sm:w-28 h-auto cursor-pointer hover:opacity-80 transition-opacity"
+          />
+        </div>
+
+        {/* CENTER — Desktop Navigation */}
+        <div className="hidden md:flex flex-1 items-center justify-center gap-8">
           <button
             onClick={() => navigate("/")}
             className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white"
@@ -68,8 +67,6 @@ export default function Navbar() {
             Products
           </button>
 
-
-
           <button
             onClick={() => navigate("/plans")}
             className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white"
@@ -83,9 +80,10 @@ export default function Navbar() {
           >
             Contact
           </button>
+        </div>
 
-          <div className="h-6 w-px bg-slate-200 dark:bg-white/10" />
-
+        {/* RIGHT — Actions */}
+        <div className="hidden md:flex flex-1 items-center justify-end gap-4">
           <Button
             variant="ghost"
             size="icon"
@@ -110,7 +108,7 @@ export default function Navbar() {
           </CTAButton>
         </div>
 
-        {/* Mobile Menu */}
+        {/* MOBILE MENU */}
         <div className="flex md:hidden items-center gap-3">
           <Button
             variant="ghost"
@@ -144,7 +142,6 @@ export default function Navbar() {
                   Products
                 </button>
 
-
                 <button
                   onClick={() => navigate("/plans")}
                   className="text-lg font-medium text-slate-700 dark:text-slate-300"
@@ -172,6 +169,7 @@ export default function Navbar() {
             </SheetContent>
           </Sheet>
         </div>
+
       </div>
     </header>
   );
