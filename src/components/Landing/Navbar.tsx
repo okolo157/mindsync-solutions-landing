@@ -52,31 +52,31 @@ export default function Navbar() {
         </div>
 
         {/* CENTER — Desktop Navigation */}
-        <div className="hidden md:flex flex-1 items-center justify-center gap-8">
+        <div className="hidden md:flex flex-1 items-center justify-center gap-12">
           <button
             onClick={() => navigate("/")}
-            className="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white"
+            className="text-sm font-semibold tracking-wide text-black dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white transition-colors"
           >
             Home
           </button>
 
           <button
             onClick={() => navigate("/products")}
-            className="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white"
+            className="text-sm font-semibold tracking-wide text-black dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white transition-colors"
           >
             Products
           </button>
 
           <button
             onClick={() => navigate("/plans")}
-            className="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white"
+            className="text-sm font-semibold tracking-wide text-black dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white transition-colors"
           >
             Plans
           </button>
 
           <button
             onClick={() => navigate("/contact")}
-            className="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white"
+            className="text-sm font-semibold tracking-wide text-black dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white transition-colors"
           >
             Contact
           </button>
