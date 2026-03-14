@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState, useEffect, useMemo } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Users, BookOpen, ChevronRight, Wallet, Bus, Library, Gamepad2, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -9,22 +9,52 @@ import typingMaster from "@/assets/typing_master.png";
 export const StickyScrollFeatures = () => {
     const navigate = useNavigate();
     const targetRef = useRef<HTMLDivElement>(null);
+    const trackRef = useRef<HTMLDivElement>(null);
+    const [trackWidth, setTrackWidth] = useState(0);
+
+    // Measure the track width on mount and resize
+    useEffect(() => {
+        const updateWidth = () => {
+            if (trackRef.current) {
+                setTrackWidth(trackRef.current.scrollWidth);
+            }
+        };
+
+        updateWidth();
+        window.addEventListener("resize", updateWidth);
+        return () => window.removeEventListener("resize", updateWidth);
+    }, []);
+
+    // Calculate how many "viewports" worth of content we have.
+    // We add a bit of extra height (e.g., 100vh) to ensure a smooth transition at the end.
+    const containerHeight = useMemo(() => {
+        if (trackWidth === 0) return "300vh";
+        // Calculate the ratio of track width to viewport width
+        // The scroll distance should roughly match the horizontal movement needed
+        const viewportWidth = typeof window !== "undefined" ? window.innerWidth : 1000;
+        const ratio = trackWidth / viewportWidth;
+        // We want to lock the scroll for long enough to see all content.
+        // A ratio of 3 means the content is 3x as wide as the screen.
+        // We might want 400vh in that case (100vh for entry/sticky start + 300vh for movement)
+        return `${Math.max(200, Math.ceil((ratio + 1) * 100))}vh`;
+    }, [trackWidth]);
 
     // We track the scroll progress of the entire target wrapper.
-    // When it enters the viewport (start start) to when it leaves (end end)
     const { scrollYProgress } = useScroll({
         target: targetRef,
-        // Start tracking when the top of the container hits the top of the viewport
-        // Stop tracking when the bottom of the container hits the bottom of the viewport
         offset: ["start start", "end end"],
     });
 
-    // Calculate precise right-edge snapping to prevent scrolling past Content
-    const x = useTransform(scrollYProgress, [0, 1], ["calc(0% - 0vw)", "calc(-100% + 100vw)"]);
+    // Calculate precise horizontal movement
+    const x = useTransform(scrollYProgress, [0, 1], ["0px", `-${Math.max(0, trackWidth - (typeof window !== "undefined" ? window.innerWidth : 0))}px`]);
 
     return (
-        <section ref={targetRef} className="relative h-[300vh] bg-slate-50 dark:bg-[#030712] mb-12">
-            <div className="sticky top-0 h-screen flex flex-col items-center overflow-visible pt-32 pb-24 lg:pb-32">
+        <section 
+            ref={targetRef} 
+            className="relative bg-slate-50 dark:bg-[#030712] mb-12"
+            style={{ height: containerHeight }}
+        >
+            <div className="sticky top-0 h-screen flex flex-col items-center overflow-visible py-[8vh] lg:py-[12vh]">
 
                 {/* Sticky Header Section */}
                 <div className="w-full max-w-7xl mx-auto px-4 flex-shrink-0 mt-8 mb-4 sm:mb-8 text-center lg:text-left z-10 lg:flex lg:justify-between lg:items-end">
@@ -52,6 +82,7 @@ export const StickyScrollFeatures = () => {
                     <div className="absolute inset-0 bg-indigo-500/5 dark:bg-indigo-500/10 blur-[100px] w-full h-1/2 left-0 top-1/2 -translate-y-1/2 pointer-events-none rounded-full" />
 
                     <motion.div
+                        ref={trackRef}
                         style={{ x }}
                         className="flex gap-8 px-4 sm:px-12 md:px-24 py-8 w-max items-center h-full relative z-10"
                     >

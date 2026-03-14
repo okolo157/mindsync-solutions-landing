@@ -46,7 +46,7 @@ export default function Navbar() {
         {/* LEFT — Logo */}
         <div className="flex flex-1">
           <img
-            src={isDark ? "/assets/mind-dark.png" : "/assets/mind-light.png"}
+            src={isDark ? logoDark : logoLight}
             alt="Logo"
             onClick={() => navigate("/")}
             className="w-20 sm:w-28 h-auto cursor-pointer hover:opacity-80 transition-opacity"
