@@ -26,8 +26,8 @@ import { StickyScrollFeatures } from "@/components/Landing/StickyScrollFeatures"
 import { SEO } from "@/components/SEO";
 import { StructuredData } from "@/components/StructuredData";
 
-const adminsLight = "/assets/admins.png";
-const adminsDark = "/assets/admins-dark.png";
+import adminsLight from "@/assets/admins.png";
+import adminsDark from "@/assets/admins-dark.png";
 
 const Landing: React.FC = () => {
   const navigate = useNavigate();

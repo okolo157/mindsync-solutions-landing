@@ -3,6 +3,8 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Users, BookOpen, ChevronRight, Wallet, Bus, Library, Gamepad2, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
+import mathSprint from "@/assets/math_sprint.png";
+import typingMaster from "@/assets/typing_master.png";
 
 export const StickyScrollFeatures = () => {
     const navigate = useNavigate();
@@ -227,13 +229,13 @@ export const StickyScrollFeatures = () => {
                                     whileHover={{ scale: 1.05, rotate: -5 }}
                                     className="relative w-28 h-28 rounded-3xl overflow-hidden shadow-2xl border-4 border-white dark:border-slate-800"
                                 >
-                                    <img src="/assets/math_sprint.png" alt="Math Sprint App Icon" className="w-full h-full object-cover" />
+                                    <img src={mathSprint} alt="Math Sprint App Icon" className="w-full h-full object-cover" />
                                 </motion.div>
                                 <motion.div
                                     whileHover={{ scale: 1.05, rotate: 5 }}
                                     className="relative w-28 h-28 rounded-3xl overflow-hidden shadow-2xl border-4 border-white dark:border-slate-800 -mt-6 ml-12"
                                 >
-                                    <img src="/assets/typing_master.png" alt="Typing Master App Icon" className="w-full h-full object-cover" />
+                                    <img src={typingMaster} alt="Typing Master App Icon" className="w-full h-full object-cover" />
                                 </motion.div>
                             </div>
                         </div>

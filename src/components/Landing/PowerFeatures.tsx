@@ -66,11 +66,11 @@ export const PowerFeatures = () => {
                                     <div>
                                         <div className="text-sm text-slate-500">Global Revenue (YTD)</div>
                                         <div className="text-3xl font-bold text-slate-900 dark:text-white"><CountUp
-                                          end={124250000}
-                                          duration={2.5}
-                                          separator=","
-                                          enableScrollSpy
-                                          scrollSpyOnce
+                                            end={124250000}
+                                            duration={2.5}
+                                            separator=","
+                                            enableScrollSpy
+                                            scrollSpyOnce
                                         />
                                         </div>
                                     </div>

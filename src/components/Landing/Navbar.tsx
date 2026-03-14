@@ -6,6 +6,8 @@ import { CTAButton } from "@/components/ui/ctaButton";
 import { useNavigate } from "react-router-dom";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { preloadCalendly } from "@/utils/calendly";
+import logoDark from "@/assets/mind-dark.png";
+import logoLight from "@/assets/mind-light.png";
 
 export default function Navbar() {
   const { theme, setTheme } = useTheme();

@@ -1,6 +1,5 @@
-
-const logoLight = "/assets/mind-light.png";
-const logoDark = "/assets/mind-dark.png";
+import logoLight from "@/assets/mind-light.png";
+import logoDark from "@/assets/mind-dark.png";
 
 export default function Footer() {
   return (
