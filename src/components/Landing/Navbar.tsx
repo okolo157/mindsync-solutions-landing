@@ -66,7 +66,7 @@ export default function Navbar() {
             onClick={() => navigate("/products")}
             className="text-sm font-semibold tracking-wide text-black dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white transition-colors"
           >
-            Products
+            Modules
           </button>
 
           <button
