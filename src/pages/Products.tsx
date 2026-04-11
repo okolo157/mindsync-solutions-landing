@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import Navbar from "@/components/Landing/Navbar";
 import Footer from "@/components/Landing/Footer";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { PRODUCTS } from "@/config/products";
 import { SEO } from "@/components/SEO";

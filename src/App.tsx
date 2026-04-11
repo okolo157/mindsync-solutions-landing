@@ -2,8 +2,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "@/components/ScrollToTop";
 import Landing from "@/pages/Landing";
 import Products from "@/pages/Products";
-import Plans from "@/pages/Plans";
-import PlansBreakdown from "@/pages/PlansBreakdown";
 import Contact from "@/pages/Contact";
 import ScheduleDemo from "@/pages/ScheduleDemo";
 import Privacy from "@/pages/Privacy";
