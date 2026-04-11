@@ -73,16 +73,13 @@ export default function Products() {
                 <div className="absolute -right-24 -top-24 w-64 h-64 bg-indigo-500/5 dark:bg-indigo-500/10 rounded-full blur-[100px] group-hover:bg-indigo-500/15 transition-all duration-700" />
                 
                 <div className="relative z-10">
-                  <div className="flex items-start justify-between mb-12">
-                    <div className="w-20 h-20 rounded-[2rem] bg-slate-50 dark:bg-slate-800 flex items-center justify-center group-hover:scale-110 group-hover:bg-slate-900 dark:group-hover:bg-white transition-all duration-700 shadow-sm">
-                      <product.icon className="w-10 h-10 text-indigo-600 dark:text-indigo-400 group-hover:text-white dark:group-hover:text-slate-950 transition-colors duration-700" />
-                    </div>
+                  <div className="flex items-start justify-between mb-8">
                     {product.link && (
                       <a
                         href={product.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-4 rounded-full bg-slate-50 dark:bg-slate-800/50 text-slate-400 group-hover:text-indigo-600 transition-colors"
+                        className="p-4 rounded-full bg-slate-50 dark:bg-slate-800/50 text-slate-400 group-hover:text-indigo-600 transition-colors ml-auto"
                       >
                         <ExternalLink className="w-6 h-6" />
                       </a>

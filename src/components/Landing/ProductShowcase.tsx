@@ -43,12 +43,9 @@ export const ProductShowcase = () => {
               {/* Blur accent */}
               <div className="absolute -right-16 -top-16 w-32 h-32 bg-indigo-500/5 dark:bg-indigo-500/10 rounded-full blur-3xl group-hover:bg-indigo-500/20 transition-all duration-500" />
 
-              <div className="mb-10 flex items-center justify-between relative z-10">
-                <div className="w-16 h-16 rounded-2xl bg-white dark:bg-slate-800 shadow-sm flex items-center justify-center group-hover:scale-110 group-hover:bg-slate-900 dark:group-hover:bg-white transition-all duration-500">
-                  <product.icon className="w-8 h-8 text-indigo-600 dark:text-indigo-400 group-hover:text-white dark:group-hover:text-slate-950 transition-colors duration-500" />
-                </div>
+              <div className="flex items-center justify-between relative z-10 mb-8">
                 {product.link && (
-                  <div className="p-3 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-400 group-hover:text-indigo-500 transition-colors">
+                  <div className="p-3 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-400 group-hover:text-indigo-500 transition-colors ml-auto">
                     <ArrowUpRight className="w-6 h-6" />
                   </div>
                 )}
