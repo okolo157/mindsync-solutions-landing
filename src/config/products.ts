@@ -17,7 +17,7 @@ export const PRODUCTS: Product[] = [
     {
         id: "lms",
         name: "MindSync LMS",
-        tagline: "Powered by TutorCafes",
+        tagline: "High-Performance Learning Management",
         description: "A world-class Learning Management System designed for seamless digital coursework and interactive learning.",
         link: "https://lms.tutorcafes.com"
     },
@@ -39,7 +39,7 @@ export const PRODUCTS: Product[] = [
         id: "magazine",
         name: "MindSync Magazine",
         tagline: "Insights into Education Tech",
-        description: "Your core source for the latest trends, research, and stories in the educational technology space."
+        description: "A specialized platform within SIMS providing parents with an integrated view of the latest events, newsletters, and school-wide communications."
     },
     {
         id: "booking",
