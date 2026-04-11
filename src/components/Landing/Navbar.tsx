@@ -1,8 +1,7 @@
-import { Sun, Moon, Menu, Calendar } from "lucide-react";
+import { Sun, Moon, Menu } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Button } from "../ui/button";
 import { useTheme } from "@/components/ThemeProvider";
-import { CTAButton } from "@/components/ui/ctaButton";
 import { useNavigate } from "react-router-dom";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { preloadCalendly } from "@/utils/calendly";
@@ -54,28 +53,28 @@ export default function Navbar() {
         </div>
 
         {/* CENTER — Desktop Navigation */}
-        <div className="hidden md:flex flex-1 items-center justify-center gap-10">
+        <div className="hidden md:flex flex-1 items-center justify-center gap-12">
           <button
             onClick={() => navigate("/")}
-            className="group relative text-[11px] font-black uppercase tracking-[0.3em] text-slate-500 hover:text-indigo-600 transition-colors"
+            className="group relative text-sm font-bold text-slate-600 dark:text-slate-300 hover:text-indigo-600 transition-colors"
           >
-            HOME
+            Home
             <span className="absolute -bottom-1 left-0 w-0 h-px bg-indigo-600 group-hover:w-full transition-all duration-300" />
           </button>
 
           <button
             onClick={() => navigate("/products")}
-            className="group relative text-[11px] font-black uppercase tracking-[0.3em] text-slate-500 hover:text-indigo-600 transition-colors"
+            className="group relative text-sm font-bold text-slate-600 dark:text-slate-300 hover:text-indigo-600 transition-colors"
           >
-            ECOSYSTEM
+            Ecosystem
             <span className="absolute -bottom-1 left-0 w-0 h-px bg-indigo-600 group-hover:w-full transition-all duration-300" />
           </button>
 
           <button
             onClick={() => navigate("/contact")}
-            className="group relative text-[11px] font-black uppercase tracking-[0.3em] text-slate-500 hover:text-indigo-600 transition-colors"
+            className="group relative text-sm font-bold text-slate-600 dark:text-slate-300 hover:text-indigo-600 transition-colors"
           >
-            CONTACT
+            Contact
             <span className="absolute -bottom-1 left-0 w-0 h-px bg-indigo-600 group-hover:w-full transition-all duration-300" />
           </button>
         </div>
@@ -96,9 +95,9 @@ export default function Navbar() {
           <button
             onClick={() => navigate("/schedule-demo")}
             onMouseEnter={preloadCalendly}
-            className="px-8 h-12 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-950 font-black text-[11px] uppercase tracking-widest hover:scale-105 transition-all shadow-xl"
+            className="px-8 h-12 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-950 font-bold text-sm hover:scale-105 transition-all shadow-xl"
           >
-            CONSULT EXPERT
+            Consult Expert
           </button>
         </div>
 
@@ -121,35 +120,35 @@ export default function Navbar() {
             </SheetTrigger>
 
             <SheetContent side="right" className="p-6">
-              <div className="flex flex-col gap-8 mt-16 px-4 font-mono">
+              <div className="flex flex-col gap-8 mt-16 px-4">
                 <button
                   onClick={() => navigate("/")}
-                  className="text-left text-xs font-black uppercase tracking-[0.4em] text-slate-500 hover:text-indigo-600 transition-colors"
+                  className="text-left text-lg font-bold text-slate-600 dark:text-slate-300 hover:text-indigo-600 transition-colors"
                 >
-                  HOME
+                  Home
                 </button>
 
                 <button
                   onClick={() => navigate("/products")}
-                  className="text-left text-xs font-black uppercase tracking-[0.4em] text-slate-500 hover:text-indigo-600 transition-colors"
+                  className="text-left text-lg font-bold text-slate-600 dark:text-slate-300 hover:text-indigo-600 transition-colors"
                 >
-                  ECOSYSTEM
+                  Ecosystem
                 </button>
 
                 <button
                   onClick={() => navigate("/contact")}
-                  className="text-left text-xs font-black uppercase tracking-[0.4em] text-slate-500 hover:text-indigo-600 transition-colors"
+                  className="text-left text-lg font-bold text-slate-600 dark:text-slate-300 hover:text-indigo-600 transition-colors"
                 >
-                  CONTACT
+                  Contact
                 </button>
 
                 <div className="pt-8 border-t border-slate-100 dark:border-white/5">
                   <button
                     onClick={() => navigate("/schedule-demo")}
                     onMouseEnter={preloadCalendly}
-                    className="w-full h-14 rounded-2xl bg-slate-900 dark:bg-white text-white dark:text-slate-950 font-black text-xs uppercase tracking-widest"
+                    className="w-full h-14 rounded-2xl bg-slate-900 dark:bg-white text-white dark:text-slate-950 font-bold text-lg"
                   >
-                    CONSULT EXPERT
+                    Consult Expert
                   </button>
                 </div>
               </div>

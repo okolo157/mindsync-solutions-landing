@@ -18,16 +18,16 @@ export default function Footer() {
               className="h-10 w-auto hidden dark:block text-white"
             />
             <div className="h-4 w-px bg-slate-200 dark:bg-slate-800 hidden md:block" />
-            <span className="text-[10px] font-black uppercase tracking-[0.2em] opacity-50">
+            <span className="text-[10px] font-bold uppercase tracking-widest opacity-60">
               © {new Date().getFullYear()} MindSync Solutions
             </span>
           </div>
 
           <div className="flex items-center gap-10">
-            <a href="/products" className="text-[10px] font-black uppercase tracking-widest hover:text-indigo-600 transition-colors">ECOSYSTEM</a>
-            <a href="/privacy" className="text-[10px] font-black uppercase tracking-widest hover:text-indigo-600 transition-colors">PRIVACY</a>
-            <a href="/terms" className="text-[10px] font-black uppercase tracking-widest hover:text-indigo-600 transition-colors">TERMS</a>
-            <a href="mailto:hello@mindsync.solutions" className="text-[10px] font-black uppercase tracking-widest hover:text-indigo-600 transition-colors">SUPPORT</a>
+            <a href="/products" className="text-[10px] font-bold uppercase tracking-widest hover:text-indigo-600 transition-colors">Ecosystem</a>
+            <a href="/privacy" className="text-[10px] font-bold uppercase tracking-widest hover:text-indigo-600 transition-colors">Privacy</a>
+            <a href="/terms" className="text-[10px] font-bold uppercase tracking-widest hover:text-indigo-600 transition-colors">Terms</a>
+            <a href="mailto:hello@mindsync.solutions" className="text-[10px] font-bold uppercase tracking-widest hover:text-indigo-600 transition-colors">Support</a>
           </div>
         </div>
       </div>

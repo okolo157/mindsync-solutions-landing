@@ -39,10 +39,10 @@ export default function Products() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-6xl sm:text-7xl lg:text-9xl font-black tracking-tighter mb-8 leading-[0.8] text-slate-900 dark:text-white"
+            className="text-6xl sm:text-7xl lg:text-9xl font-black tracking-tight mb-8 leading-[0.8] text-slate-900 dark:text-white"
           >
             Empowering <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-500 animate-gradient">Evolution.</span>
+            <span className="text-indigo-600 dark:text-indigo-500">Evolution.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -86,10 +86,10 @@ export default function Products() {
                     )}
                   </div>
 
-                  <h2 className="text-4xl font-black text-slate-900 dark:text-white mb-3 tracking-tight group-hover:text-indigo-600 transition-colors duration-500">
+                  <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-3 tracking-tight group-hover:text-indigo-600 transition-colors duration-500">
                     {product.name}
                   </h2>
-                  <div className="text-[10px] font-black uppercase tracking-[0.4em] text-indigo-500 mb-8">
+                  <div className="text-[10px] font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400 mb-8">
                     {product.tagline}
                   </div>
                   
@@ -102,13 +102,13 @@ export default function Products() {
                       href={product.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-4 text-sm font-black text-slate-900 dark:text-white group-hover:text-indigo-600 transition-all"
+                      className="inline-flex items-center gap-4 text-sm font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 transition-all"
                     >
-                      EXPLORE PLATFORM
-                      <div className="w-8 h-[2px] bg-slate-900 dark:bg-white group-hover:w-16 group-hover:bg-indigo-600 transition-all duration-500" />
+                      Explore Platform
+                      <div className="w-8 h-[2px] bg-slate-900 dark:bg-white group-hover:w-16 group-hover:bg-indigo-600 transition-all duration-500 opacity-20" />
                     </a>
                   ) : (
-                    <div className="text-xs font-black text-slate-400 tracking-widest uppercase">
+                    <div className="text-[10px] font-bold text-slate-400 tracking-widest uppercase">
                       Phase II Implementation
                     </div>
                   )}
@@ -125,7 +125,7 @@ export default function Products() {
           <div className="absolute inset-0 bg-slate-50 dark:bg-slate-900/40 border border-slate-100 dark:border-white/5 rounded-[4rem] group-hover:scale-[1.01] transition-transform duration-700" />
           
           <div className="relative z-10 py-24 px-8 md:px-16 text-center">
-            <h2 className="text-5xl md:text-7xl font-black text-slate-900 dark:text-white mb-8 tracking-tighter leading-[0.9]">
+            <h2 className="text-5xl md:text-7xl font-bold text-slate-900 dark:text-white mb-8 tracking-tight leading-[0.9]">
               Ready for a <br />
               <span className="text-indigo-600">Strategic Shift?</span>
             </h2>
@@ -136,7 +136,7 @@ export default function Products() {
             
             <button
               onClick={() => navigate("/contact")}
-              className="px-12 h-16 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-950 font-black text-lg hover:scale-105 transition-all shadow-2xl"
+              className="px-12 h-16 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-950 font-bold text-lg hover:scale-105 transition-all shadow-2xl"
             >
               Consult Our Team
             </button>

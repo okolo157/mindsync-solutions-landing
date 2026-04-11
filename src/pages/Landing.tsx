@@ -36,8 +36,8 @@ const Landing: React.FC = () => {
 
       {/* Ambient Background */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-indigo-500/5 dark:bg-indigo-500/10 blur-[120px]" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-purple-500/5 dark:bg-purple-500/10 blur-[120px]" />
+        <div className="absolute top-[-10%] left-[-10%] w-[35%] h-[35%] rounded-full bg-indigo-500/5 dark:bg-indigo-500/10 blur-[80px]" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[35%] h-[35%] rounded-full bg-purple-500/5 dark:bg-purple-500/10 blur-[80px]" />
       </div>
 
       {/* Hero Section */}
@@ -49,10 +49,10 @@ const Landing: React.FC = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-8 leading-[0.9] text-slate-900 dark:text-white"
+                className="text-5xl sm:text-6xl md:text-7xl font-black tracking-tight mb-8 leading-[0.9] text-slate-900 dark:text-white"
               >
                 Infinite 
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-500 bg-[length:200%_auto] animate-gradient">
+                <span className="block text-indigo-600 dark:text-indigo-500">
                   Solutions.
                 </span>
               </motion.h1>
@@ -144,9 +144,9 @@ const Landing: React.FC = () => {
               viewport={{ once: true }}
               className="max-w-3xl mx-auto"
             >
-              <h2 className="text-5xl md:text-7xl font-black text-white mb-8 tracking-tighter leading-[0.9]">
+              <h2 className="text-5xl md:text-7xl font-bold text-white mb-8 tracking-tight leading-[0.9]">
                 Architecting the Future 
-                <span className="block text-indigo-400">of Education.</span>
+                <span className="block text-indigo-400 opacity-90">of Education.</span>
               </h2>
               <p className="text-xl md:text-2xl text-indigo-100/70 mb-12 font-medium">
                 Connect with our specialists today to orchestrate your institution's digital transformation.

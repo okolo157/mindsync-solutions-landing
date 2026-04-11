@@ -33,10 +33,10 @@ export const AdvantageSection = () => {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="text-5xl md:text-7xl font-black tracking-tighter text-slate-900 dark:text-white mb-8 leading-[0.9]"
+            className="text-5xl md:text-7xl font-bold tracking-tight text-slate-900 dark:text-white mb-8 leading-[0.9]"
           >
             Unified Intelligence. <br />
-            <span className="text-indigo-600">Unlimited Potential.</span>
+            <span className="text-indigo-600 dark:text-indigo-500">Unlimited Potential.</span>
           </motion.h2>
           <p className="text-xl md:text-2xl text-slate-500 dark:text-slate-400 font-medium max-w-2xl leading-relaxed">
             MindSync is more than a suite of tools—it's a high-performance collective 

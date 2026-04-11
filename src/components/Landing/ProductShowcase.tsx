@@ -14,9 +14,9 @@ export const ProductShowcase = () => {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="text-5xl md:text-7xl font-black tracking-tighter text-slate-900 dark:text-white mb-8"
+            className="text-5xl md:text-7xl font-bold tracking-tight text-slate-900 dark:text-white mb-8 leading-[0.9]"
           >
-            Curated <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">Ecosphere.</span>
+            Curated <span className="text-indigo-600 dark:text-indigo-500">Ecosphere.</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, x: -20 }}
@@ -55,7 +55,7 @@ export const ProductShowcase = () => {
                 <h3 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white mb-2">
                   {product.name}
                 </h3>
-                <div className="text-[10px] font-black uppercase tracking-[0.3em] text-indigo-500/80">
+                <div className="text-[10px] font-bold uppercase tracking-widest text-indigo-600/80 dark:text-indigo-400/80">
                   {product.tagline}
                 </div>
               </div>
@@ -69,13 +69,13 @@ export const ProductShowcase = () => {
                   href={product.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 text-sm font-black text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors relative z-10"
+                  className="inline-flex items-center gap-3 text-sm font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors relative z-10"
                 >
-                  EXPLORE PLATFORM
-                  <div className="w-6 h-[2px] bg-slate-900 dark:bg-white group-hover:w-10 group-hover:bg-indigo-600 transition-all" />
+                  Explore Platform
+                  <div className="w-6 h-[2px] bg-slate-900 dark:bg-white group-hover:w-10 group-hover:bg-indigo-600 transition-all opacity-20" />
                 </a>
               ) : (
-                <span className="text-xs font-bold text-slate-400 tracking-widest relative z-10">COMING TO ECOSYSTEM</span>
+                <span className="text-xs font-bold text-slate-400 tracking-wider relative z-10 uppercase">Phase II Implementation</span>
               )}
             </motion.div>
           ))}
