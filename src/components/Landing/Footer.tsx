@@ -19,29 +19,15 @@ export default function Footer() {
             />
           </div>
           <span className="text-sm font-medium sm:border-l border-slate-200 dark:border-white/10 sm:pl-3 sm:ml-3 text-center">
-            © {new Date().getFullYear()} Mindsync
+            © {new Date().getFullYear()} MindSync Solutions Australia
           </span>
         </div>
 
         <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 text-sm font-medium">
-          <a
-            href="/privacy"
-            className="hover:text-slate-900 dark:hover:text-white transition-colors"
-          >
-            Privacy Policy
-          </a>
-          <a
-            href="/terms"
-            className="hover:text-slate-900 dark:hover:text-white transition-colors"
-          >
-            Terms of Service
-          </a>
-          <a
-            href="mailto:hello@mindsync.com"
-            className="hover:text-slate-900 dark:hover:text-white transition-colors"
-          >
-            Contact Support
-          </a>
+          <a href="/products" className="hover:text-slate-900 dark:hover:text-white transition-colors">Products</a>
+          <a href="/privacy" className="hover:text-slate-900 dark:hover:text-white transition-colors">Privacy</a>
+          <a href="/terms" className="hover:text-slate-900 dark:hover:text-white transition-colors">Terms</a>
+          <a href="mailto:hello@mindsync.solutions" className="hover:text-slate-900 dark:hover:text-white transition-colors">Support</a>
         </div>
       </div>
     </footer>

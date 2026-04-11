@@ -129,11 +129,11 @@ export default function Contact() {
   const contactSchema = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
-    "name": "Contact Mindsync Support & Sales",
-    "description": "Ready to transform your institution? Contact our team to launch your next-generation school management system.",
+    "name": "Contact MindSync Solutions Australia",
+    "description": "Ready to transform your institution? Contact our team of educational technology experts today.",
     "mainEntity": {
       "@type": "Organization",
-      "name": "Mindsync Solutions",
+      "name": "MindSync Solutions Australia",
       "email": "hello@mindsync.solutions",
       "telephone": "+233 5436 13605"
     }
@@ -142,8 +142,8 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-[#FCFDFF] dark:bg-[#030712] px-3 text-slate-900 dark:text-white overflow-x-hidden selection:bg-indigo-500/30 font-sans transition-colors duration-300">
       <SEO
-        title="Contact Us | Mindsync"
-        description="Get in touch with the Mindsync team. We're here to help you launch your next-generation school management system."
+        title="Contact Us | MindSync Solutions Australia"
+        description="Get in touch with the MindSync Solutions team. We're here to help you revolutionize your educational ecosystem."
         canonicalUrl="https://mindsync.solutions/contact"
       />
       <StructuredData data={contactSchema} />
@@ -183,8 +183,8 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-xl text-slate-600/90 dark:text-slate-400 max-w-2xl mx-auto"
           >
-            Ready to transform your institution? Our team is here to help you
-            launch your next-generation school management system.
+            Ready to transform your educational future? Our team is here to help you
+            navigate our ecosystem and find the perfect solutions for your needs.
           </motion.p>
         </div>
 

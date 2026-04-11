@@ -40,8 +40,8 @@ export default function ScheduleDemo() {
   return (
     <div className="min-h-screen bg-[#FCFDFF] dark:bg-[#030712] text-slate-900 dark:text-white font-sans transition-colors duration-300 overflow-x-hidden">
       <SEO
-        title="Schedule a Demo | Mindsync"
-        description="Book a 30-minute deep dive to see how Mindsync streamlines institutional management. Interactive demo with product specialists."
+        title="Schedule a Consultation | MindSync Solutions Australia"
+        description="Book a 30-minute deep dive to see how MindSync Solutions can revolutionize your educational ecosystem. Interactive demo with product specialists."
         canonicalUrl="https://mindsync.solutions/schedule-demo"
       />
       <Navbar />
@@ -59,11 +59,11 @@ export default function ScheduleDemo() {
             <div className="lg:col-span-2 space-y-8 pt-4">
               <div>
                 <h1 className="text-5xl sm:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#0F172A] to-[#0F172A]/70 dark:from-white dark:to-slate-400">
-                  Book a Deep Dive
+                  Book a Consultation
                 </h1>
                 <p className="text-lg text-slate-600/90 dark:text-slate-400 leading-relaxed">
-                  Experience how Mindsync streamlines institutional management.
-                  In this 30-minute session, we'll walk you through the platform
+                  Experience the MindSync ecosystem. 
+                  In this 30-minute session, we'll walk you through our solutions 
                   and answer your specific questions.
                 </p>
               </div>

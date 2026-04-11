@@ -18,8 +18,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/products" element={<Products />} />
-          <Route path="/plans" element={<Plans />} />
-          <Route path="/plans/breakdown/:tier?" element={<PlansBreakdown />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/schedule-demo" element={<ScheduleDemo />} />
           <Route path="/privacy" element={<Privacy />} />

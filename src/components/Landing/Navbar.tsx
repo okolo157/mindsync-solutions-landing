@@ -66,15 +66,9 @@ export default function Navbar() {
             onClick={() => navigate("/products")}
             className="text-sm font-semibold tracking-wide text-black dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white transition-colors"
           >
-            Modules
+            Products
           </button>
 
-          <button
-            onClick={() => navigate("/plans")}
-            className="text-sm font-semibold tracking-wide text-black dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white transition-colors"
-          >
-            Plans
-          </button>
 
           <button
             onClick={() => navigate("/contact")}
@@ -144,12 +138,6 @@ export default function Navbar() {
                   Products
                 </button>
 
-                <button
-                  onClick={() => navigate("/plans")}
-                  className="text-lg font-semibold text-slate-700 dark:text-slate-300"
-                >
-                  Plans
-                </button>
 
                 <button
                   onClick={() => navigate("/contact")}
