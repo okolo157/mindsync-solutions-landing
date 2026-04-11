@@ -7,10 +7,10 @@ export const ProductShowcase = () => {
     <section className="py-32 relative overflow-hidden bg-white dark:bg-[#030712]">
       {/* Decorative lines / Background accent */}
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-slate-200 dark:via-slate-800 to-transparent" />
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mb-24">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -25,7 +25,7 @@ export const ProductShowcase = () => {
             transition={{ delay: 0.1 }}
             className="text-xl md:text-2xl text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
           >
-            Each platform in the MindSync ecosystem is meticulously engineered to 
+            Each platform in the MindSync ecosystem is meticulously engineered to
             work in concert, providing a seamless operational backbone for your institution.
           </motion.p>
         </div>
@@ -64,7 +64,7 @@ export const ProductShowcase = () => {
                 {product.description}
               </p>
 
-              {product.link ? (
+              {product.link && (
                 <a
                   href={product.link}
                   target="_blank"
@@ -74,8 +74,6 @@ export const ProductShowcase = () => {
                   Explore Platform
                   <div className="w-6 h-[2px] bg-slate-900 dark:bg-white group-hover:w-10 group-hover:bg-indigo-600 transition-all opacity-20" />
                 </a>
-              ) : (
-                <span className="text-xs font-bold text-slate-400 tracking-wider relative z-10 uppercase">Phase II Implementation</span>
               )}
             </motion.div>
           ))}

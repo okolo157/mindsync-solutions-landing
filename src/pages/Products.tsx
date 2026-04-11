@@ -50,7 +50,7 @@ export default function Products() {
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className="text-xl sm:text-2xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed font-medium"
           >
-            A cohesive suite of architectural foundations designed to scale 
+            A cohesive suite of architectural foundations designed to scale
             modern educational institutions with precision and reliability.
           </motion.p>
         </div>
@@ -71,7 +71,7 @@ export default function Products() {
               >
                 {/* Visual Accent */}
                 <div className="absolute -right-24 -top-24 w-64 h-64 bg-indigo-500/5 dark:bg-indigo-500/10 rounded-full blur-[100px] group-hover:bg-indigo-500/15 transition-all duration-700" />
-                
+
                 <div className="relative z-10">
                   <div className="flex items-start justify-between mb-8">
                     {product.link && (
@@ -92,12 +92,12 @@ export default function Products() {
                   <div className="text-[10px] font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400 mb-8">
                     {product.tagline}
                   </div>
-                  
+
                   <p className="text-slate-500 dark:text-slate-400 text-xl leading-relaxed mb-12 font-medium">
                     {product.description}
                   </p>
 
-                  {product.link ? (
+                  {product.link && (
                     <a
                       href={product.link}
                       target="_blank"
@@ -107,10 +107,6 @@ export default function Products() {
                       Explore Platform
                       <div className="w-8 h-[2px] bg-slate-900 dark:bg-white group-hover:w-16 group-hover:bg-indigo-600 transition-all duration-500 opacity-20" />
                     </a>
-                  ) : (
-                    <div className="text-[10px] font-bold text-slate-400 tracking-widest uppercase">
-                      Phase II Implementation
-                    </div>
                   )}
                 </div>
               </motion.div>
@@ -123,17 +119,17 @@ export default function Products() {
       <section className="py-32 relative overflow-hidden px-4">
         <div className="max-w-7xl mx-auto relative group">
           <div className="absolute inset-0 bg-slate-50 dark:bg-slate-900/40 border border-slate-100 dark:border-white/5 rounded-[4rem] group-hover:scale-[1.01] transition-transform duration-700" />
-          
+
           <div className="relative z-10 py-24 px-8 md:px-16 text-center">
             <h2 className="text-5xl md:text-7xl font-bold text-slate-900 dark:text-white mb-8 tracking-tight leading-[0.9]">
               Ready for a <br />
               <span className="text-indigo-600">Strategic Shift?</span>
             </h2>
             <p className="text-xl md:text-2xl text-slate-500 dark:text-slate-400 mb-12 font-medium max-w-2xl mx-auto">
-              Our specialists are ready to help you migrate to a more resilient, 
+              Our specialists are ready to help you migrate to a more resilient,
               interoperable educational ecosystem.
             </p>
-            
+
             <button
               onClick={() => navigate("/contact")}
               className="px-12 h-16 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-950 font-bold text-lg hover:scale-105 transition-all shadow-2xl"

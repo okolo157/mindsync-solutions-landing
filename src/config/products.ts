@@ -16,7 +16,7 @@ export const PRODUCTS: Product[] = [
     },
     {
         id: "lms",
-        name: "MindSync LMS",
+        name: "TutorCafes LMS",
         tagline: "High-Performance Learning Management",
         description: "A world-class Learning Management System designed for seamless digital coursework and interactive learning.",
         link: "https://lms.tutorcafes.com"
@@ -30,7 +30,7 @@ export const PRODUCTS: Product[] = [
     },
     {
         id: "thedoc",
-        name: "The Document Transformer",
+        name: "The Doc Store",
         tagline: "Static Docs to Dynamic Courses",
         description: "Transform your PDFs and documents into interactive learning courses instantly.",
         link: "https://TheDoc.store"
