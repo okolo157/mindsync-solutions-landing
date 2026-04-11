@@ -129,11 +129,11 @@ export default function Contact() {
   const contactSchema = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
-    "name": "Contact MindSync Solutions Australia",
+    "name": "Contact MindSync Solutions",
     "description": "Ready to transform your institution? Contact our team of educational technology experts today.",
     "mainEntity": {
       "@type": "Organization",
-      "name": "MindSync Solutions Australia",
+      "name": "MindSync Solutions",
       "email": "hello@mindsync.solutions",
       "telephone": "+233 5436 13605"
     }
@@ -142,7 +142,7 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-[#FCFDFF] dark:bg-[#030712] px-3 text-slate-900 dark:text-white overflow-x-hidden selection:bg-indigo-500/30 font-sans transition-colors duration-300">
       <SEO
-        title="Contact Us | MindSync Solutions Australia"
+        title="Contact Us | MindSync Solutions"
         description="Get in touch with the MindSync Solutions team. We're here to help you revolutionize your educational ecosystem."
         canonicalUrl="https://mindsync.solutions/contact"
       />

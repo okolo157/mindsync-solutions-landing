@@ -3,31 +3,32 @@ import logoDark from "@/assets/mind-dark.png";
 
 export default function Footer() {
   return (
-    <footer className="bg-white dark:bg-[#02040a] border-t border-slate-200 dark:border-white/5 py-8 text-slate-600 dark:text-slate-400">
-      <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
-        <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-0">
-          <div className="flex items-center justify-center">
+    <footer className="bg-white dark:bg-[#030712] border-t border-slate-100 dark:border-white/5 py-12 text-slate-500 dark:text-slate-400">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+          <div className="flex flex-col md:flex-row items-center gap-6">
             <img
               src={logoLight}
               alt="Mindsync Logo"
-              className="h-14 w-auto dark:hidden"
+              className="h-10 w-auto dark:hidden"
             />
             <img
               src={logoDark}
               alt="Mindsync Logo"
-              className="h-14 w-auto hidden dark:block"
+              className="h-10 w-auto hidden dark:block text-white"
             />
+            <div className="h-4 w-px bg-slate-200 dark:bg-slate-800 hidden md:block" />
+            <span className="text-[10px] font-black uppercase tracking-[0.2em] opacity-50">
+              © {new Date().getFullYear()} MindSync Solutions
+            </span>
           </div>
-          <span className="text-sm font-medium sm:border-l border-slate-200 dark:border-white/10 sm:pl-3 sm:ml-3 text-center">
-            © {new Date().getFullYear()} MindSync Solutions Australia
-          </span>
-        </div>
 
-        <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 text-sm font-medium">
-          <a href="/products" className="hover:text-slate-900 dark:hover:text-white transition-colors">Products</a>
-          <a href="/privacy" className="hover:text-slate-900 dark:hover:text-white transition-colors">Privacy</a>
-          <a href="/terms" className="hover:text-slate-900 dark:hover:text-white transition-colors">Terms</a>
-          <a href="mailto:hello@mindsync.solutions" className="hover:text-slate-900 dark:hover:text-white transition-colors">Support</a>
+          <div className="flex items-center gap-10">
+            <a href="/products" className="text-[10px] font-black uppercase tracking-widest hover:text-indigo-600 transition-colors">ECOSYSTEM</a>
+            <a href="/privacy" className="text-[10px] font-black uppercase tracking-widest hover:text-indigo-600 transition-colors">PRIVACY</a>
+            <a href="/terms" className="text-[10px] font-black uppercase tracking-widest hover:text-indigo-600 transition-colors">TERMS</a>
+            <a href="mailto:hello@mindsync.solutions" className="text-[10px] font-black uppercase tracking-widest hover:text-indigo-600 transition-colors">SUPPORT</a>
+          </div>
         </div>
       </div>
     </footer>

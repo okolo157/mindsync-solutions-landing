@@ -9,8 +9,8 @@ interface SEOProps {
 }
 
 export const SEO = ({
-    title = 'MindSync Solutions Australia | Empowering Education Through Technology',
-    description = 'MindSync Solutions Australia provides a comprehensive ecosystem of educational technology products, including SIMS, LMS, Tutoring platforms, and more.',
+    title = 'MindSync Solutions | Empowering Education Through Technology',
+    description = 'MindSync Solutions provides a comprehensive ecosystem of educational technology products, including SIMS, LMS, Tutoring platforms, and more.',
     type = 'website',
     canonicalUrl,
     image = 'https://mindsync.solutions/og-image.png',

@@ -37,7 +37,7 @@ export const PRODUCTS: Product[] = [
         id: "tutorsmart",
         name: "TutorSmart",
         tagline: "The Future of Tutoring",
-        description: "An advanced tutoring platform connecting learners with expert educators across Australia.",
+        description: "An advanced tutoring platform connecting learners with expert educators globally.",
         link: "https://tutorsmart.com.au",
         icon: Users
     },

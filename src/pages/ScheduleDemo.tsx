@@ -40,7 +40,7 @@ export default function ScheduleDemo() {
   return (
     <div className="min-h-screen bg-[#FCFDFF] dark:bg-[#030712] text-slate-900 dark:text-white font-sans transition-colors duration-300 overflow-x-hidden">
       <SEO
-        title="Schedule a Consultation | MindSync Solutions Australia"
+        title="Schedule a Consultation | MindSync Solutions"
         description="Book a 30-minute deep dive to see how MindSync Solutions can revolutionize your educational ecosystem. Interactive demo with product specialists."
         canonicalUrl="https://mindsync.solutions/schedule-demo"
       />

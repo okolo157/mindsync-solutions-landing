@@ -1,33 +1,32 @@
 import { motion } from "framer-motion";
-import { ArrowRight, ExternalLink } from "lucide-react";
 import { PRODUCTS } from "@/config/products";
-import { CTAButton } from "@/components/ui/ctaButton";
-import { useNavigate } from "react-router-dom";
+import { ArrowUpRight } from "lucide-react";
 
 export const ProductShowcase = () => {
-  const navigate = useNavigate();
-
   return (
-    <section className="py-20 sm:py-32 bg-white dark:bg-[#030712] relative overflow-hidden">
+    <section className="py-32 relative overflow-hidden bg-white dark:bg-[#030712]">
+      {/* Decorative lines / Background accent */}
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-slate-200 dark:via-slate-800 to-transparent" />
+      
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16 sm:mb-24">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+        <div className="max-w-4xl mb-24">
+          <motion.h2 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-slate-900 dark:text-white"
+            className="text-5xl md:text-7xl font-black tracking-tighter text-slate-900 dark:text-white mb-8"
           >
-            Our Ecosystem
+            Curated <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">Ecosphere.</span>
           </motion.h2>
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-lg sm:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl md:text-2xl text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
           >
-            A unified suite of products designed to empower every corner of the educational landscape, 
-            from classroom management to staffing solutions.
+            Each platform in the MindSync ecosystem is meticulously engineered to 
+            work in concert, providing a seamless operational backbone for your institution.
           </motion.p>
         </div>
 
@@ -35,28 +34,36 @@ export const ProductShowcase = () => {
           {PRODUCTS.map((product, idx) => (
             <motion.div
               key={product.id}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              whileHover={{ y: -10 }}
-              className="group relative p-8 rounded-3xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/5 hover:border-indigo-500/30 transition-all duration-300 shadow-sm hover:shadow-2xl"
+              transition={{ delay: idx * 0.1, duration: 0.5 }}
+              className="group relative p-10 rounded-[3rem] bg-slate-50/50 dark:bg-slate-900/30 border border-slate-100 dark:border-white/5 hover:border-indigo-500/20 transition-all duration-500 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.4)] flex flex-col h-full overflow-hidden"
             >
-              <div className="absolute top-0 right-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity">
-                {product.link && <ExternalLink className="w-5 h-5 text-indigo-500" />}
+              {/* Blur accent */}
+              <div className="absolute -right-16 -top-16 w-32 h-32 bg-indigo-500/5 dark:bg-indigo-500/10 rounded-full blur-3xl group-hover:bg-indigo-500/20 transition-all duration-500" />
+
+              <div className="mb-10 flex items-center justify-between relative z-10">
+                <div className="w-16 h-16 rounded-2xl bg-white dark:bg-slate-800 shadow-sm flex items-center justify-center group-hover:scale-110 group-hover:bg-slate-900 dark:group-hover:bg-white transition-all duration-500">
+                  <product.icon className="w-8 h-8 text-indigo-600 dark:text-indigo-400 group-hover:text-white dark:group-hover:text-slate-950 transition-colors duration-500" />
+                </div>
+                {product.link && (
+                  <div className="p-3 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-400 group-hover:text-indigo-500 transition-colors">
+                    <ArrowUpRight className="w-6 h-6" />
+                  </div>
+                )}
               </div>
 
-              <div className="w-14 h-14 rounded-2xl bg-indigo-500/10 dark:bg-indigo-500/20 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
-                <product.icon className="w-7 h-7 text-indigo-600 dark:text-indigo-400" />
+              <div className="mb-6 relative z-10">
+                <h3 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white mb-2">
+                  {product.name}
+                </h3>
+                <div className="text-[10px] font-black uppercase tracking-[0.3em] text-indigo-500/80">
+                  {product.tagline}
+                </div>
               </div>
 
-              <h3 className="text-2xl font-bold mb-2 text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                {product.name}
-              </h3>
-              <div className="text-xs font-bold uppercase tracking-widest text-indigo-500 mb-4">
-                {product.tagline}
-              </div>
-              <p className="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed line-clamp-3">
+              <p className="text-slate-500 dark:text-slate-400 font-medium leading-relaxed mb-10 flex-1 relative z-10">
                 {product.description}
               </p>
 
@@ -65,27 +72,16 @@ export const ProductShowcase = () => {
                   href={product.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center text-sm font-bold text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors"
+                  className="inline-flex items-center gap-3 text-sm font-black text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors relative z-10"
                 >
-                  Visit Website <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
+                  EXPLORE PLATFORM
+                  <div className="w-6 h-[2px] bg-slate-900 dark:bg-white group-hover:w-10 group-hover:bg-indigo-600 transition-all" />
                 </a>
               ) : (
-                <div className="text-sm font-medium text-slate-400">
-                  Coming Soon
-                </div>
+                <span className="text-xs font-bold text-slate-400 tracking-widest relative z-10">COMING TO ECOSYSTEM</span>
               )}
             </motion.div>
           ))}
-        </div>
-
-        <div className="mt-20 text-center">
-          <CTAButton
-            onClick={() => navigate("/products")}
-            size="lg"
-            className="px-12 h-16 rounded-full bg-indigo-600 text-white hover:bg-indigo-700 shadow-xl shadow-indigo-500/20"
-          >
-            Explore All Solutions
-          </CTAButton>
         </div>
       </div>
     </section>
