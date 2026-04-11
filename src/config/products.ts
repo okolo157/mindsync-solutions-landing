@@ -19,7 +19,7 @@ export const PRODUCTS: Product[] = [
         name: "TutorCafes LMS",
         tagline: "High-Performance Learning Management",
         description: "A world-class Learning Management System designed for seamless digital coursework and interactive learning.",
-        link: "https://lms.tutorcafes.com"
+        link: "https://lms.mindsync.solutions"
     },
     {
         id: "tutorsmart",
