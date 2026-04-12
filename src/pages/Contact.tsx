@@ -130,7 +130,7 @@ export default function Contact() {
       <div className="container mx-auto px-4 pt-32 pb-20 relative z-10">
         <div className="text-center mb-16">
           <h1
-            className="text-6xl sm:text-7xl lg:text-8xl font-black tracking-tight mb-8 leading-[0.9] text-slate-900 dark:text-white"
+            className="text-7xl sm:text-8xl lg:text-[9rem] font-black tracking-tight mb-8 leading-[0.9] text-slate-900 dark:text-white"
           >
             Get in Touch
           </h1>

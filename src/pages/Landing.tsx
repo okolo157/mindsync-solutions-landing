@@ -1,3 +1,5 @@
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Rocket } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "@/components/Landing/Navbar";
@@ -10,6 +12,15 @@ import { StructuredData } from "@/components/StructuredData";
 
 const Landing: React.FC = () => {
   const navigate = useNavigate();
+  const [index, setIndex] = useState(0);
+  const words = ["Solutions.", "Potential.", "Intelligence.", "Ecosystem.", "Evolution."];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % words.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, []);
 
   const organizationSchema = {
     "@context": "https://schema.org",
@@ -39,14 +50,25 @@ const Landing: React.FC = () => {
       {/* Hero Section */}
       <div className="relative pt-24 pb-10 sm:pt-28 sm:pb-16 lg:pt-32 lg:pb-32 overflow-hidden z-10">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="flex flex-col items-center max-w-4xl mx-auto">
+          <div className="flex flex-col items-center w-full">
             <div className="text-center w-full">
               <h1
-                className="text-6xl sm:text-7xl lg:text-8xl font-black tracking-tight mb-8 leading-[0.9] text-slate-900 dark:text-white"
+                className="text-7xl sm:text-8xl lg:text-[9rem] font-black tracking-tight mb-8 leading-[0.9] text-slate-900 dark:text-white"
               >
                 Infinite 
-                <span className="block text-indigo-600 dark:text-indigo-500">
-                  Solutions.
+                <span className="block relative h-[1.1em] overflow-hidden">
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={words[index]}
+                      initial={{ y: "100%", opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      exit={{ y: "-100%", opacity: 0 }}
+                      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                      className="absolute inset-0 text-indigo-600 dark:text-indigo-500 w-full"
+                    >
+                      {words[index]}
+                    </motion.span>
+                  </AnimatePresence>
                 </span>
               </h1>
 
