@@ -16,7 +16,7 @@ export const PRODUCTS: Product[] = [
     },
     {
         id: "lms",
-        name: "TutorCafes LMS",
+        name: "MindSync LMS",
         tagline: "High-Performance Learning Management",
         description: "A world-class Learning Management System designed for seamless digital coursework and interactive learning.",
         link: "https://lms.mindsync.solutions"
@@ -29,23 +29,23 @@ export const PRODUCTS: Product[] = [
         link: "https://tutorsmart.com.au"
     },
     {
-        id: "thedoc",
-        name: "The Doc Store",
-        tagline: "Static Docs to Dynamic Courses",
+        id: "coursify",
+        name: "Coursify",
+        tagline: "Easily Convert Static Docs to Dynamic Courses",
         description: "Transform your PDFs and documents into interactive learning courses instantly.",
-        link: "https://TheDoc.store"
+        link: "https://coursify.mindsync.solutions"
     },
     {
         id: "magazine",
         name: "MindSync Magazine",
         tagline: "Insights into Education Tech",
-        description: "A specialized platform within SIMS providing parents with an integrated view of the latest events, newsletters, and school-wide communications."
+        description: "A specialized platform within our SIMS providing parents with an integrated view of the latest events, newsletters, and school-wide communications."
     },
     {
         id: "booking",
         name: "Casual Teacher Booking",
         tagline: "Instant Staffing Solutions",
-        description: "A streamlined app for schools to find and book casual relief teachers in real-time.",
+        description: "A streamlined app for schools to find and book casual relief/substitute teachers in real-time.",
         link: "https://booking.mindsync.solutions"
     }
 ];

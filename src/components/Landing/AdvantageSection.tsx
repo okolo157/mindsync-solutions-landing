@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { Layers, Zap, TrendingUp, Cpu } from 'lucide-react';
 
 export const AdvantageSection = () => {
@@ -27,31 +26,24 @@ export const AdvantageSection = () => {
 
   return (
     <section className="py-32 relative bg-white dark:bg-[#030712] overflow-hidden">
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mb-24">
-          <motion.h2 
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+      <div className="container mx-auto px-4 relative z-10 text-center">
+        <div className="max-w-4xl mx-auto mb-24">
+          <h2 
             className="text-5xl md:text-7xl font-bold tracking-tight text-slate-900 dark:text-white mb-8 leading-[0.9]"
           >
             Unified Intelligence. <br />
             <span className="text-indigo-600 dark:text-indigo-500">Unlimited Potential.</span>
-          </motion.h2>
-          <p className="text-xl md:text-2xl text-slate-500 dark:text-slate-400 font-medium max-w-2xl leading-relaxed">
+          </h2>
+          <p className="text-xl md:text-2xl text-slate-500 dark:text-slate-400 font-medium max-w-2xl mx-auto leading-relaxed">
             MindSync is more than a suite of tools—it's a high-performance collective 
             engineered to orchestrate your entire digital ecosystem.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
           {highlights.map((item, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
               className="group p-8 rounded-[2.5rem] bg-slate-50 dark:bg-slate-900/40 border border-slate-100 dark:border-white/5 hover:border-indigo-500/20 transition-all duration-500 hover:shadow-2xl"
             >
               <div className="w-14 h-14 rounded-2xl bg-white dark:bg-slate-800 shadow-sm flex items-center justify-center mb-8 group-hover:scale-110 group-hover:bg-indigo-600 transition-all duration-500">
@@ -61,7 +53,7 @@ export const AdvantageSection = () => {
               <p className="text-slate-500 dark:text-slate-500 font-medium leading-relaxed">
                 {item.desc}
               </p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

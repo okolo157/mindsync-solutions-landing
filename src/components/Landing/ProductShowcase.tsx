@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { PRODUCTS } from "@/config/products";
 import { ArrowUpRight } from "lucide-react";
 
@@ -8,36 +7,25 @@ export const ProductShowcase = () => {
       {/* Decorative lines / Background accent */}
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-slate-200 dark:via-slate-800 to-transparent" />
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mb-24">
-          <motion.h2
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+      <div className="container mx-auto px-4 relative z-10 text-center">
+        <div className="max-w-4xl mx-auto mb-24">
+          <h2
             className="text-5xl md:text-7xl font-bold tracking-tight text-slate-900 dark:text-white mb-8 leading-[0.9]"
           >
             Curated <span className="text-indigo-600 dark:text-indigo-500">Ecosphere.</span>
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
+          </h2>
+          <p
             className="text-xl md:text-2xl text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
           >
             Each platform in the MindSync ecosystem is meticulously engineered to
             work in concert, providing a seamless operational backbone for your institution.
-          </motion.p>
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
           {PRODUCTS.map((product, idx) => (
-            <motion.div
+            <div
               key={product.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1, duration: 0.5 }}
               className="group relative p-10 rounded-[3rem] bg-slate-50/50 dark:bg-slate-900/30 border border-slate-100 dark:border-white/5 hover:border-indigo-500/20 transition-all duration-500 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.4)] flex flex-col h-full overflow-hidden"
             >
               {/* Blur accent */}
@@ -75,7 +63,7 @@ export const ProductShowcase = () => {
                   <div className="w-6 h-[2px] bg-slate-900 dark:bg-white group-hover:w-10 group-hover:bg-indigo-600 transition-all opacity-20" />
                 </a>
               )}
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

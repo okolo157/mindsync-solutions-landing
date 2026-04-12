@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import Navbar from "@/components/Landing/Navbar";
 import Footer from "@/components/Landing/Footer";
 import { ExternalLink } from "lucide-react";
@@ -35,24 +34,18 @@ export default function Products() {
       {/* Hero Section */}
       <div className="relative pt-32 pb-16 sm:pt-40 sm:pb-24 lg:pt-56 lg:pb-32 overflow-hidden z-10">
         <div className="container mx-auto px-4 relative text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-6xl sm:text-7xl lg:text-9xl font-black tracking-tight mb-8 leading-[0.8] text-slate-900 dark:text-white"
+          <h1
+            className="text-7xl sm:text-8xl lg:text-[10rem] font-black tracking-tight mb-8 leading-[0.8] text-slate-900 dark:text-white"
           >
             Empowering <br />
             <span className="text-indigo-600 dark:text-indigo-500">Evolution.</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="text-xl sm:text-2xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed font-medium"
+          </h1>
+          <p
+            className="text-xl sm:text-2xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed font-normal"
           >
             A cohesive suite of architectural foundations designed to scale
             modern educational institutions with precision and reliability.
-          </motion.p>
+          </p>
         </div>
       </div>
 
@@ -61,12 +54,8 @@ export default function Products() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-7xl mx-auto">
             {PRODUCTS.map((product, idx) => (
-              <motion.div
+              <div
                 key={product.id}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: idx * 0.1 }}
                 className="group relative p-12 rounded-[3.5rem] bg-white dark:bg-slate-900/30 border border-slate-100 dark:border-white/5 hover:border-indigo-500/20 transition-all duration-700 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.08)] dark:hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.4)] overflow-hidden"
               >
                 {/* Visual Accent */}
@@ -109,7 +98,7 @@ export default function Products() {
                     </a>
                   )}
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

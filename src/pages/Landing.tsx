@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Rocket } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "@/components/Landing/Navbar";
@@ -8,9 +7,6 @@ import { AdvantageSection } from "@/components/Landing/AdvantageSection";
 import { ProductShowcase } from "@/components/Landing/ProductShowcase";
 import { SEO } from "@/components/SEO";
 import { StructuredData } from "@/components/StructuredData";
-
-import adminsLight from "@/assets/admins.png";
-import adminsDark from "@/assets/admins-dark.png";
 
 const Landing: React.FC = () => {
   const navigate = useNavigate();
@@ -41,37 +37,28 @@ const Landing: React.FC = () => {
       </div>
 
       {/* Hero Section */}
-      <div className="relative pt-24 pb-10 sm:pt-28 sm:pb-16 lg:pt-32 lg:pb-20 overflow-hidden z-10">
+      <div className="relative pt-24 pb-10 sm:pt-28 sm:pb-16 lg:pt-32 lg:pb-32 overflow-hidden z-10">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
-            <div className="flex-[0.8] lg:flex-1 text-center lg:text-left">
-              <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                className="text-5xl sm:text-6xl md:text-7xl font-black tracking-tight mb-8 leading-[0.9] text-slate-900 dark:text-white"
+          <div className="flex flex-col items-center max-w-4xl mx-auto">
+            <div className="text-center w-full">
+              <h1
+                className="text-6xl sm:text-7xl lg:text-8xl font-black tracking-tight mb-8 leading-[0.9] text-slate-900 dark:text-white"
               >
                 Infinite 
                 <span className="block text-indigo-600 dark:text-indigo-500">
                   Solutions.
                 </span>
-              </motion.h1>
+              </h1>
 
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                className="text-lg sm:text-xl md:text-2xl text-slate-500 dark:text-slate-400 mb-12 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium"
+              <p
+                className="text-lg sm:text-xl md:text-2xl text-slate-500 dark:text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed font-normal"
               >
                 MindSync Solutions is the definitive ecosystem for modern education. 
                 One unified platform powering the next generation of learning.
-              </motion.p>
+              </p>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-                className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-8"
+              <div
+                className="flex flex-col sm:flex-row items-center justify-center gap-8"
               >
                 <button
                   onClick={() => navigate("/schedule-demo")}
@@ -92,35 +79,8 @@ const Landing: React.FC = () => {
                   View Ecosystem
                   <div className="w-8 h-[2px] bg-slate-200 dark:bg-slate-800 group-hover:w-12 group-hover:bg-indigo-500 transition-all" />
                 </button>
-              </motion.div>
-            </div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9, x: 20 }}
-              animate={{ opacity: 1, scale: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="flex-1 lg:flex-[1.1] relative w-full max-w-[650px] lg:max-w-none"
-            >
-              <div className="relative">
-                <div className="absolute inset-0 bg-indigo-500/10 dark:bg-indigo-500/20 blur-[80px] rounded-full scale-110" />
-                <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                  className="relative z-10"
-                >
-                  <img
-                    src={adminsLight}
-                    alt="Educational Leaders"
-                    className="block dark:hidden rounded-2xl w-full h-auto drop-shadow-[0_20px_50px_rgba(79,70,229,0.15)] border border-white/10"
-                  />
-                  <img
-                    src={adminsDark}
-                    alt="Educational Leaders"
-                    className="hidden dark:block rounded-2xl w-full h-auto drop-shadow-[0_20px_50px_rgba(255,255,255,0.05)] border border-white/10"
-                  />
-                </motion.div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>
@@ -138,10 +98,7 @@ const Landing: React.FC = () => {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(99,102,241,0.15),transparent_50%)]" />
           
           <div className="relative z-10 py-24 px-8 md:px-16 text-center">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
+            <div
               className="max-w-3xl mx-auto"
             >
               <h2 className="text-5xl md:text-7xl font-bold text-white mb-8 tracking-tight leading-[0.9]">
@@ -166,7 +123,7 @@ const Landing: React.FC = () => {
                   Consult an Expert
                 </button>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>

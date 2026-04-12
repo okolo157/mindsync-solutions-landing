@@ -15,37 +15,10 @@ import {
   CheckCircle,
   Loader2,
 } from "lucide-react";
-import { motion } from "framer-motion";
 
 import { toast } from "sonner";
 import { SEO } from "@/components/SEO";
 import { StructuredData } from "@/components/StructuredData";
-
-const FloatingElement = ({
-  children,
-  delay = 0,
-  duration = 3,
-}: {
-  children: React.ReactNode;
-  delay?: number;
-  duration?: number;
-}) => {
-  return (
-    <motion.div
-      animate={{
-        y: [0, -15, 0],
-      }}
-      transition={{
-        duration: duration,
-        repeat: Infinity,
-        ease: "easeInOut",
-        delay: delay,
-      }}
-    >
-      {children}
-    </motion.div>
-  );
-};
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -150,55 +123,33 @@ export default function Contact() {
       <Navbar />
 
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-indigo-500/5 dark:bg-indigo-500/10 blur-[120px]" />
-        <div className="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-purple-500/5 dark:bg-purple-500/10 blur-[120px]" />
-      </div>
-
-      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-        <div className="absolute top-1/4 left-10 opacity-20">
-          <FloatingElement delay={0} duration={4}>
-            <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-500 rotate-12 blur-sm" />
-          </FloatingElement>
-        </div>
-        <div className="absolute bottom-1/4 right-10 opacity-20">
-          <FloatingElement delay={1} duration={5}>
-            <div className="w-32 h-32 rounded-full border border-indigo-500/30 blur-[2px]" />
-          </FloatingElement>
-        </div>
+        <div className="absolute top-[-10%] left-[-10%] w-[35%] h-[35%] rounded-full bg-indigo-500/5 dark:bg-indigo-500/10 blur-[120px]" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[35%] h-[35%] rounded-full bg-purple-500/5 dark:bg-purple-500/10 blur-[120px]" />
       </div>
 
       <div className="container mx-auto px-4 pt-32 pb-20 relative z-10">
         <div className="text-center mb-16">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-5xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-b from-[#0F172A] via-[#0F172A]/90 to-[#0F172A]/50 dark:from-white dark:via-white/90 dark:to-white/50"
+          <h1
+            className="text-6xl sm:text-7xl lg:text-8xl font-black tracking-tight mb-8 leading-[0.9] text-slate-900 dark:text-white"
           >
             Get in Touch
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-xl text-slate-600/90 dark:text-slate-400 max-w-2xl mx-auto"
+          </h1>
+          <p
+            className="text-lg sm:text-xl md:text-2xl text-slate-500 dark:text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed font-normal"
           >
             Ready to transform your educational future? Our team is here to help you
             navigate our ecosystem and find the perfect solutions for your needs.
-          </motion.p>
+          </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto items-start">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+          <div
             className="space-y-6"
           >
             {contactInfo.map((info, index) => (
               <div
                 key={index}
-                className={`group p-6 rounded-2xl border border-white dark:border-white/5 bg-white/60 dark:bg-white/[0.02] hover:bg-white/80 dark:hover:bg-white/[0.05] backdrop-blur-md shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-300 ${info.border}`}
+                className={`group p-6 rounded-[2.5rem] border border-white dark:border-white/5 bg-white/60 dark:bg-white/[0.02] hover:bg-white/80 dark:hover:bg-white/[0.05] backdrop-blur-md shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-300 ${info.border}`}
               >
                 <div className="flex items-center gap-4">
                   <div className={`p-3 rounded-xl ${info.bg} ${info.color}`}>
@@ -219,7 +170,7 @@ export default function Contact() {
               </div>
             ))}
 
-            <div className="p-8 rounded-3xl bg-gradient-to-br from-indigo-600 to-purple-600 text-white shadow-xl mt-8 relative overflow-hidden">
+            <div className="p-8 rounded-[2.5rem] bg-gradient-to-br from-indigo-600 to-purple-600 text-white shadow-xl mt-8 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
               <div className="relative z-10">
                 <h3 className="text-2xl font-bold mb-4">Ready for a Demo?</h3>
@@ -235,14 +186,10 @@ export default function Contact() {
                 </Button>
               </div>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <div className="p-8 rounded-3xl border border-white dark:border-white/10 bg-white/60 dark:bg-white/[0.02] backdrop-blur-md shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+          <div>
+            <div className="p-8 rounded-[3.5rem] border border-white dark:border-white/10 bg-white/60 dark:bg-white/[0.02] backdrop-blur-md shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
               {isSubmitted ? (
                 <div className="text-center py-8">
                   <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-6" />
@@ -401,7 +348,7 @@ export default function Contact() {
                 </>
               )}
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
       <Footer />
