@@ -46,6 +46,6 @@ export const PRODUCTS: Product[] = [
         name: "Casual Teacher Booking",
         tagline: "Instant Staffing Solutions",
         description: "A streamlined app for schools to find and book casual relief/substitute teachers in real-time.",
-        link: "https://booking.mindsync.solutions"
+        link: "https://jobs.mindsync.solutions"
     }
 ];
