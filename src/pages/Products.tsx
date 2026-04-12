@@ -53,7 +53,7 @@ export default function Products() {
       <div className="relative z-10 pb-32">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-7xl mx-auto">
-            {PRODUCTS.map((product, idx) => (
+            {PRODUCTS.map((product) => (
               <div
                 key={product.id}
                 className="group relative p-12 rounded-[3.5rem] bg-white dark:bg-slate-900/30 border border-slate-100 dark:border-white/5 hover:border-indigo-500/20 transition-all duration-700 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.08)] dark:hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.4)] overflow-hidden"
