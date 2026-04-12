@@ -26,7 +26,7 @@ export const PRODUCTS: Product[] = [
         name: "TutorSmart",
         tagline: "The Future of Tutoring",
         description: "An advanced tutoring platform connecting learners with expert educators globally.",
-        link: "https://tutorsmart.com.au"
+        link: "https://tutorsmart.mindsync.solutions"
     },
     {
         id: "coursify",
