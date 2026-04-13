@@ -62,13 +62,13 @@ export default function Navbar() {
             <span className="absolute -bottom-1 left-0 w-0 h-px bg-indigo-600 group-hover:w-full transition-all duration-300" />
           </button>
 
-          <button
-            onClick={() => navigate("/products")}
-            className="group relative text-sm font-bold text-slate-600 dark:text-slate-300 hover:text-indigo-600 transition-colors"
-          >
-            Ecosystem
-            <span className="absolute -bottom-1 left-0 w-0 h-px bg-indigo-600 group-hover:w-full transition-all duration-300" />
-          </button>
+            <button
+              onClick={() => navigate("/products")}
+              className="group relative text-sm font-bold text-slate-600 dark:text-slate-300 hover:text-indigo-600 transition-colors"
+            >
+              Ecosystem
+              <span className="absolute -bottom-1 left-0 w-0 h-px bg-indigo-600 group-hover:w-full transition-all duration-300" />
+            </button>
 
           <button
             onClick={() => navigate("/contact")}

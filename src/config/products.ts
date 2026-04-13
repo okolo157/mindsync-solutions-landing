@@ -17,7 +17,7 @@ export const PRODUCTS: Product[] = [
     {
         id: "lms",
         name: "MindSync LMS",
-        tagline: "High-Performance Learning Management",
+        tagline: "High-Performance Learning Management System",
         description: "A world-class Learning Management System designed for seamless digital coursework and interactive learning.",
         link: "https://lms.mindsync.solutions"
     },
@@ -31,19 +31,19 @@ export const PRODUCTS: Product[] = [
     {
         id: "coursify",
         name: "Coursify",
-        tagline: "Easily Convert Static Docs to Dynamic Courses",
+        tagline: "Convert Static Docs to LMS ready courses",
         description: "Transform your PDFs and documents into interactive learning courses instantly.",
         link: "https://coursify.mindsync.solutions"
     },
     {
         id: "magazine",
         name: "MindSync Magazine",
-        tagline: "Insights into Education Tech",
+        tagline: "School Newsletter & Events Platform",
         description: "A specialized platform within our SIMS providing parents with an integrated view of the latest events, newsletters, and school-wide communications."
     },
     {
         id: "booking",
-        name: "Casual Teacher Booking",
+        name: "Relief Teacher Booking",
         tagline: "Instant Staffing Solutions",
         description: "A streamlined app for schools to find and book casual relief/substitute teachers in real-time.",
         link: "https://jobs.mindsync.solutions"
