@@ -13,7 +13,7 @@ export const SEO = ({
     description = 'MindSync Solutions provides a comprehensive ecosystem of educational technology products, including SIMS, LMS, Tutoring platforms, and more.',
     type = 'website',
     canonicalUrl,
-    image = 'https://mindsync.solutions/logo.png',
+    image = 'https://mindsync.solutions/og-image.png',
 }: SEOProps) => {
     const url = canonicalUrl || 'https://mindsync.solutions';
 
