@@ -32,7 +32,7 @@ export default function Products() {
       <Navbar />
 
       {/* Hero Section */}
-      <div className="relative pt-32 pb-16 sm:pt-40 sm:pb-24 lg:pt-56 lg:pb-32 overflow-hidden z-10">
+       <div className="relative pt-24 sm:pt-28 lg:pt-36 pb-16 sm:pb-20 lg:pb-24 overflow-hidden z-10">
         <div className="container mx-auto px-4 relative text-center">
           <h1
             className="text-6xl sm:text-9xl lg:text-[11rem] font-black tracking-tight mb-8 leading-[0.8] text-slate-900 dark:text-white"
