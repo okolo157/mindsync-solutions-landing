@@ -14,7 +14,6 @@ import {
   Image as ImageIcon, MapPin, Clock, 
   ShieldCheck, BaggageClaim 
 } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 const iconMap: Record<string, React.ElementType> = {
   Calendar, GraduationCap, CreditCard, Users, Fingerprint, 
