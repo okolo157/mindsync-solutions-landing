@@ -1,4 +1,4 @@
-import { Sun, Moon, Menu } from "lucide-react";
+import { Sun, Moon, Menu, ChevronDown, Zap, ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Button } from "../ui/button";
 import { useTheme } from "@/components/ThemeProvider";
@@ -7,11 +7,14 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { preloadCalendly } from "@/utils/calendly";
 import logoDark from "@/assets/mind-dark.png";
 import logoLight from "@/assets/mind-light.png";
+import { PRODUCTS } from "@/config/products";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
   const { theme, setTheme } = useTheme();
   const navigate = useNavigate();
   const [isDark, setIsDark] = useState(false);
+  const [showEcosystemMenu, setShowEcosystemMenu] = useState(false);
 
   // Determine effective theme for logo
   useEffect(() => {
@@ -38,6 +41,9 @@ export default function Navbar() {
     setTheme(isDark ? "light" : "dark");
   };
 
+  const sims = PRODUCTS.find(p => p.id === "sims");
+  const otherProducts = PRODUCTS.filter(p => p.id !== "sims");
+
   return (
     <header className="fixed top-0 left-0 z-50 w-full py-4 bg-white/70 dark:bg-black/20 backdrop-blur-md border-b border-white/10 dark:border-white/5 transition-all duration-300">
       <div className="flex items-center max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -62,13 +68,93 @@ export default function Navbar() {
             <span className="absolute -bottom-1 left-0 w-0 h-px bg-indigo-600 group-hover:w-full transition-all duration-300" />
           </button>
 
+          <div
+            className="relative"
+            onMouseEnter={() => setShowEcosystemMenu(true)}
+            onMouseLeave={() => setShowEcosystemMenu(false)}
+          >
             <button
               onClick={() => navigate("/products")}
-              className="group relative text-sm font-bold text-slate-600 dark:text-slate-300 hover:text-indigo-600 transition-colors"
+              className="group flex items-center gap-1 text-sm font-bold text-slate-600 dark:text-slate-300 hover:text-indigo-600 transition-colors"
             >
               Ecosystem
-              <span className="absolute -bottom-1 left-0 w-0 h-px bg-indigo-600 group-hover:w-full transition-all duration-300" />
+              <ChevronDown className={cn("w-4 h-4 transition-transform duration-300", showEcosystemMenu && "rotate-180")} />
             </button>
+
+            <AnimatePresence>
+              {showEcosystemMenu && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                  className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[600px] bg-white dark:bg-slate-900 border border-slate-100 dark:border-white/10 rounded-3xl shadow-2xl overflow-hidden p-8 grid grid-cols-2 gap-8"
+                >
+                  {/* SIMS Highlight */}
+                  <div className="space-y-6">
+                    <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400">
+                      SIMS Ecosystem
+                    </div>
+                    <div className="space-y-4">
+                      {sims?.features.slice(0, 4).map((f) => (
+                        <button
+                          key={f.title}
+                          onClick={() => {
+                            navigate(`/products/sims`);
+                            setShowEcosystemMenu(false);
+                          }}
+                          className="flex items-start gap-4 p-3 rounded-2xl hover:bg-slate-50 dark:hover:bg-white/5 transition-all text-left group/item"
+                        >
+                          <div className="pt-1 text-slate-400 group-hover/item:text-indigo-600 transition-colors">
+                            <Zap className="w-4 h-4" />
+                          </div>
+                          <div>
+                            <div className="text-sm font-bold text-slate-900 dark:text-white mb-0.5">{f.title}</div>
+                            <div className="text-xs text-slate-500 dark:text-slate-400 font-medium line-clamp-1">{f.description}</div>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                    <button
+                      onClick={() => navigate("/products/sims")}
+                      className="flex items-center gap-2 text-xs font-bold text-indigo-600 dark:text-indigo-400 hover:gap-3 transition-all px-3"
+                    >
+                      View Comprehensive SIMS <ArrowRight className="w-3 h-3" />
+                    </button>
+                  </div>
+
+                  {/* Other Products */}
+                  <div className="space-y-6 border-l border-slate-100 dark:border-white/10 pl-8">
+                    <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-slate-500">
+                      Specialized Solutions
+                    </div>
+                    <div className="space-y-2">
+                      {otherProducts.map(p => (
+                        <button
+                          key={p.id}
+                          onClick={() => {
+                            navigate(`/products/${p.id}`);
+                            setShowEcosystemMenu(false);
+                          }}
+                          className="w-full flex items-center justify-between p-3 rounded-2xl hover:bg-slate-50 dark:hover:bg-white/5 transition-all group/p"
+                        >
+                          <span className="text-sm font-bold text-slate-600 dark:text-slate-300 group-hover/p:text-slate-900 dark:group-hover/p:text-white transition-colors">{p.name}</span>
+                          <ArrowRight className="w-4 h-4 text-slate-300 group-hover/p:text-indigo-600 transition-all -translate-x-2 opacity-0 group-hover/p:translate-x-0 group-hover/p:opacity-100" />
+                        </button>
+                      ))}
+                    </div>
+                    <div className="pt-4 border-t border-slate-100 dark:border-white/10 mt-4">
+                      <button
+                        onClick={() => navigate("/products")}
+                        className="w-full h-12 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-950 font-bold text-xs"
+                      >
+                        Explore Full Ecosystem
+                      </button>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
 
           <button
             onClick={() => navigate("/contact")}
@@ -160,3 +246,9 @@ export default function Navbar() {
     </header>
   );
 }
+
+// Helper function for class merging
+function cn(...inputs: any[]) {
+  return inputs.filter(Boolean).join(" ");
+}
+

@@ -1,6 +1,10 @@
 import { PRODUCTS } from "@/config/products";
+import { useState } from "react";
+import { ProductQuickView } from "./ProductQuickView";
 
 export const ProductShowcase = () => {
+  const [selectedProduct, setSelectedProduct] = useState<any>(null);
+
   return (
     <section className="py-32 relative overflow-hidden bg-white dark:bg-[#030712]">
       {/* Decorative lines / Background accent */}
@@ -25,12 +29,11 @@ export const ProductShowcase = () => {
           {PRODUCTS.map((product) => (
             <div
               key={product.id}
-              className="group relative p-10 rounded-[3rem] bg-slate-50/50 dark:bg-slate-900/30 border border-slate-200/60 dark:border-white/10 hover:border-indigo-500/20 transition-all duration-500 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.4)] flex flex-col h-full overflow-hidden"
+              onClick={() => setSelectedProduct(product)}
+              className="group relative p-10 rounded-[3rem] bg-slate-50/50 dark:bg-slate-900/30 border border-slate-200/60 dark:border-white/10 hover:border-indigo-500/20 transition-all duration-500 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.4)] flex flex-col h-full overflow-hidden cursor-pointer"
             >
               {/* Blur accent */}
               <div className="absolute -right-16 -top-16 w-32 h-32 bg-indigo-500/5 dark:bg-indigo-500/10 rounded-full blur-3xl group-hover:bg-indigo-500/20 transition-all duration-500" />
-
-
 
               <div className="mb-6 relative z-10">
                 <h3 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white mb-2">
@@ -45,21 +48,24 @@ export const ProductShowcase = () => {
                 {product.description}
               </p>
 
-              {product.link && (
-                <a
-                  href={product.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 text-sm font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors relative z-10"
-                >
-                  Explore Platform
-                  <div className="w-6 h-[2px] bg-slate-900 dark:bg-white group-hover:w-10 group-hover:bg-indigo-600 transition-all opacity-20" />
-                </a>
-              )}
+              <div
+                className="inline-flex items-center gap-3 text-sm font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors relative z-10"
+              >
+                Quick View
+                <div className="w-6 h-[2px] bg-slate-900 dark:bg-white group-hover:w-10 group-hover:bg-indigo-600 transition-all opacity-20" />
+              </div>
             </div>
           ))}
         </div>
       </div>
+
+      <ProductQuickView 
+        product={selectedProduct} 
+        isOpen={!!selectedProduct} 
+        onClose={() => setSelectedProduct(null)} 
+      />
     </section>
   );
 };
+
+

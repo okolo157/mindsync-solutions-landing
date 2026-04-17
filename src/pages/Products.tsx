@@ -5,9 +5,12 @@ import { useNavigate } from "react-router-dom";
 import { PRODUCTS } from "@/config/products";
 import { SEO } from "@/components/SEO";
 import { StructuredData } from "@/components/StructuredData";
+import { useState } from "react";
+import { ProductQuickView } from "@/components/Landing/ProductQuickView";
 
 export default function Products() {
   const navigate = useNavigate();
+  const [selectedProduct, setSelectedProduct] = useState<any>(null);
 
   const productSchema = {
     "@context": "https://schema.org",
@@ -56,7 +59,8 @@ export default function Products() {
             {PRODUCTS.map((product) => (
               <div
                 key={product.id}
-                className="group relative p-12 rounded-[3.5rem] bg-white dark:bg-slate-900/30 border border-slate-100 dark:border-white/5 hover:border-indigo-500/20 transition-all duration-700 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.08)] dark:hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.4)] overflow-hidden"
+                onClick={() => setSelectedProduct(product)}
+                className="group relative p-12 rounded-[3.5rem] bg-white dark:bg-slate-900/30 border border-slate-100 dark:border-white/5 hover:border-indigo-500/20 transition-all duration-700 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.08)] dark:hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.4)] overflow-hidden cursor-pointer"
               >
                 {/* Visual Accent */}
                 <div className="absolute -right-24 -top-24 w-64 h-64 bg-indigo-500/5 dark:bg-indigo-500/10 rounded-full blur-[100px] group-hover:bg-indigo-500/15 transition-all duration-700" />
@@ -64,14 +68,11 @@ export default function Products() {
                 <div className="relative z-10">
                   <div className="flex items-start justify-between mb-8">
                     {product.link && (
-                      <a
-                        href={product.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                      <div
                         className="p-4 rounded-full bg-slate-50 dark:bg-slate-800/50 text-slate-400 group-hover:text-indigo-600 transition-colors ml-auto"
                       >
                         <ExternalLink className="w-6 h-6" />
-                      </a>
+                      </div>
                     )}
                   </div>
 
@@ -86,23 +87,25 @@ export default function Products() {
                     {product.description}
                   </p>
 
-                  {product.link && (
-                    <a
-                      href={product.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-4 text-sm font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 transition-all"
-                    >
-                      Explore Platform
-                      <div className="w-8 h-[2px] bg-slate-900 dark:bg-white group-hover:w-16 group-hover:bg-indigo-600 transition-all duration-500 opacity-20" />
-                    </a>
-                  )}
+                  <div
+                    className="inline-flex items-center gap-4 text-sm font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 transition-all"
+                  >
+                    Quick View
+                    <div className="w-8 h-[2px] bg-slate-900 dark:bg-white group-hover:w-16 group-hover:bg-indigo-600 transition-all duration-500 opacity-20" />
+                  </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </div>
+
+      <ProductQuickView 
+        product={selectedProduct} 
+        isOpen={!!selectedProduct} 
+        onClose={() => setSelectedProduct(null)} 
+      />
+
 
       {/* CTA Section */}
       <section className="py-32 relative overflow-hidden px-4">
@@ -133,3 +136,4 @@ export default function Products() {
     </div>
   );
 }
+
